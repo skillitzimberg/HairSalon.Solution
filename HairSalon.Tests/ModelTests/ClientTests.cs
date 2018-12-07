@@ -52,8 +52,8 @@ namespace HairSalon.TestTools
     [TestMethod]
     public void GetLastName_ReturnsLastName_String()
     {
-      string expectedLastName = "Scott";
-      Client newClient = new Client(expectedLastName, "Bergler", "5038905118", 1, 1);
+      string expectedLastName = "Bergler";
+      Client newClient = new Client("Scott", expectedLastName, "5038905118", 1, 1);
 
       string actualLastName = newClient.GetLastName();
 

@@ -150,19 +150,13 @@ Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{}
-### 8: Client clears database
-**Example:**  
-Input:
-clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
-clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
-Output: List<Client>{}
-### 9: Client saves to database
+### 8: Client saves to database
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{clientOne, clientTwo}
-##### 10: Client returns a list of all clients
+##### 9: Client returns a list of all clients
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  

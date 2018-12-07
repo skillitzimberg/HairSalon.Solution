@@ -83,26 +83,26 @@ namespace HairSalon.Models
     public static List<Client> GetAll()
     {
       List<Client> allClients = new List<Client> {};
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM clients;";
-      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-      while(rdr.Read())
-      {
-        int clientId = rdr.GetInt32(0);
-        string clientFirstName = rdr.GetString(1);
-        string clientLastName = rdr.GetString(2);
-        string clientPhoneNumber = rdr.GetString(3);
-        int stylistId = rdr.GetInt32(4);
-        Client newClient = new Client(clientFirstName, clientLastName, clientPhoneNumber, stylistId, clientId);
-        allClients.Add(newClient);
-      }
-      conn.Close();
-      if (conn != null)
-      {
-        conn.Dispose();
-      }
+      // MySqlConnection conn = DB.Connection();
+      // conn.Open();
+      // MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      // cmd.CommandText = @"SELECT * FROM clients;";
+      // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      // while(rdr.Read())
+      // {
+      //   int clientId = rdr.GetInt32(0);
+      //   string clientFirstName = rdr.GetString(1);
+      //   string clientLastName = rdr.GetString(2);
+      //   string clientPhoneNumber = rdr.GetString(3);
+      //   int stylistId = rdr.GetInt32(4);
+      //   Client newClient = new Client(clientFirstName, clientLastName, clientPhoneNumber, stylistId, clientId);
+      //   allClients.Add(newClient);
+      // }
+      // conn.Close();
+      // if (conn != null)
+      // {
+      //   conn.Dispose();
+      // }
       return allClients;
     }
 

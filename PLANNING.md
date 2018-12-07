@@ -168,49 +168,45 @@ Output: "Scott"
 **Example:**  
 Input:  "Stephan", "Blair", 1  
 Output: "Blair"
-##### 15: Stylist returns stylist id
-**Example:**  
-Input:  "Stephan", "Blair", 1  
-Output: 1
-##### 16: Stylist returns empty list
+##### 15: Stylist returns empty list
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
-### 17: Stylist clears database
+### 16: Stylist clears database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
-### 18: Stylist saves to database
+### 17: Stylist saves to database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
-##### 19: Stylist adds new stylist
+##### 18: Stylist adds new stylist
 **Example:**  
 Input: stylistOne: ("Stephan", "Blair", 1)  
 Output: List<Stylist>{stylistOne}
-##### 20: Stylist adds new client
+##### 19: Stylist adds new client
 **Example:**  
 Input: clientOne: ("Scott", "Bergler", "5038905118", 1, 1)  
 Output: List<Client>{clientOne}
-##### 21: Stylist returns a list of all stylists
+##### 20: Stylist returns a list of all stylists
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
-##### 22: Stylist deletes a stylist
+##### 21: Stylist deletes a stylist
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: "Holly", "Kindred", 1
-##### 23: Stylist deletes a client
+##### 22: Stylist deletes a client
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  

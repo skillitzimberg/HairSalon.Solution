@@ -48,5 +48,15 @@ namespace HairSalon.Tests
 
       Assert.AreEqual(expectedLastName, actualLastName);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_List()
+    {
+      List<Stylist> expectedStylistList = new List<Stylist> { };
+
+      List<Stylist> actualStylistList = Stylist.GetAll();
+
+      CollectionAssert.AreEqual(expectedStylistList, actualStylistList);
+    }
   }
 }

@@ -12,9 +12,9 @@ namespace HairSalon.Models
 
     public Stylist(string firstName, string lastName, int id = 0)
     {
-      _id = id;
       _firstName = firstName;
       _lastName = lastName;
+      _id = id;
     }
 
     public int GetId()
@@ -66,28 +66,25 @@ namespace HairSalon.Models
 
     public static List<Stylist> GetAll()
     {
-      Stylist newStylist = new Stylist("Stephan", "Blair", 1);
-      List<Stylist> allStylists = new List<Stylist> {newStylist};
-      // MySqlConnection conn = DB.Connection();
-      // conn.Open();
-      // MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      // cmd.CommandText = @"SELECT * FROM clients;";
-      // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-      // while(rdr.Read())
-      // {
-      //   int stylistId = rdr.GetInt32(0);
-      //   string stylistFirstName = rdr.GetString(1);
-      //   string stylistLastName = rdr.GetString(2);
-      //   string stylistPhoneNumber = rdr.GetString(3);
-      //   int stylistId = rdr.GetInt32(4);
-      //   Stylist newStylist = new Stylist(stylistFirstName, stylistLastName, stylistId);
-      //   allStylists.Add(newStylist);
-      // }
-      // conn.Close();
-      // if (conn != null)
-      // {
-      //   conn.Dispose();
-      // }
+      List<Stylist> allStylists = new List<Stylist> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM clients;";
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int stylistId = rdr.GetInt32(0);
+        string stylistFirstName = rdr.GetString(1);
+        string stylistLastName = rdr.GetString(2);
+        Stylist newStylist = new Stylist(stylistFirstName, stylistLastName, stylistId);
+        allStylists.Add(newStylist);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
       return allStylists;
     }
 

@@ -150,8 +150,6 @@ namespace HairSalon.Models
 
     public static Client Find(int id)
     {
-      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1);
-      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2);
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
@@ -183,7 +181,7 @@ namespace HairSalon.Models
       {
         conn.Dispose();
       }
-      return clientOne;
+      return foundClient;
 
       //To fail Find use below code:
       //Item dummyItem = new Item("dummy item");

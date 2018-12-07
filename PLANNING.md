@@ -154,67 +154,63 @@ Output: 2
 #### Stylist Model Specs
 ##### 11: StylistConstructor returns Stylist
 **Example:**  
-Input:  "Scott", "Bergler", "5038905118", 1, 1  
-Output: Stylist - Scott Bergler
+Input:  "Stephan", "Blair", 1  
+Output: Stylist - Stephan Blair
 ##### 12: Stylist returns stylist id
 **Example:**  
-Input:  "Scott", "Bergler", "5038905118", 1, 1  
+Input:  "Stephan", "Blair", 1  
 Output: 1
 ##### 13: Stylist returns stylist first name
 **Example:**  
-Input:  "Scott", "Bergler", "5038905118", 1, 1  
+Input:  "Stephan", "Blair", 1  
 Output: "Scott"
 ##### 14: Stylist returns stylist last name
 **Example:**  
-Input:  "Scott", "Bergler", "5038905118", 1, 1  
-Output: "Bergler"
-##### 15: Stylist returns stylist phone number
+Input:  "Stephan", "Blair", 1  
+Output: "Blair"
+##### 15: Stylist returns stylist id
 **Example:**  
-Input:  "Scott", "Bergler", "5038905118", 1, 1  
-Output: "5038905118"
-##### 16: Stylist returns stylist id
-**Example:**  
-Input:  "Scott", "Bergler", "5038905118", 1, 1  
+Input:  "Stephan", "Blair", 1  
 Output: 1
-##### 17: Stylist returns empty list
+##### 16: Stylist returns empty list
 **Example:**  
 Input:
-stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
-stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
+stylistOne: ("Stephan", "Blair", 1),  
+stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
-### 18: Stylist clears database
+### 17: Stylist clears database
 **Example:**  
 Input:
-stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
-stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
+stylistOne: ("Stephan", "Blair", 1),  
+stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
-### 19: Stylist saves to database
+### 18: Stylist saves to database
 **Example:**  
 Input:
-stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
-stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
+stylistOne: ("Stephan", "Blair", 1),  
+stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
-##### 20: Stylist adds new stylist
+##### 19: Stylist adds new stylist
 **Example:**  
-Input: stylistOne: ("Stephan", "Blair", "5109083751", 1, 1)  
+Input: stylistOne: ("Stephan", "Blair", 1)  
 Output: List<Stylist>{stylistOne}
-##### 21: Stylist adds new client
+##### 20: Stylist adds new client
 **Example:**  
 Input: clientOne: ("Scott", "Bergler", "5038905118", 1, 1)  
 Output: List<Client>{clientOne}
-##### 22: Stylist returns a list of all stylists
+##### 21: Stylist returns a list of all stylists
 **Example:**  
 Input:
-stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
-stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
+stylistOne: ("Stephan", "Blair", 1),  
+stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
-##### 23: Stylist deletes a stylist
+##### 22: Stylist deletes a stylist
 **Example:**  
 Input:
-stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
-stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
-Output: "Holly", "Kindred", "312859047", 2, 1
-##### 24: Stylist deletes a client
+stylistOne: ("Stephan", "Blair", 1),  
+stylistTwo: ("Holly", "Kindred", 1)  
+Output: "Holly", "Kindred", 1
+##### 23: Stylist deletes a client
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  

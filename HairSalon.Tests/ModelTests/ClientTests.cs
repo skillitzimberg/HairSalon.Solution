@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using HairSalon.Models;
 
-namespace HairSalon.TestTools
+namespace HairSalon.Tests
 {
   [TestClass]
   public class ClientTest : IDisposable

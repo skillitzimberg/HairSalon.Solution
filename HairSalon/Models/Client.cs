@@ -146,9 +146,6 @@ namespace HairSalon.Models
       {
         conn.Dispose();
       }
-      //To fail Saves to database method - declare method and keep it empty
-      //To fail Save AssignsId test -
-      //do not add the "_id = (int) cmd.LastInsertedId;" line
     }
 
 

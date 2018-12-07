@@ -1,6 +1,6 @@
 # HairSalon.Solution
 
-#### A C Sharp hair salon managemant app
+#### A C Sharp hair salon management app
 
 #### By Scott Bergler
 

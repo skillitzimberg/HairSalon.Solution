@@ -17,6 +17,11 @@ namespace HairSalon.Models
       _lastName = lastName;
     }
 
+    public int GetId()
+    {
+      return 10;
+    }
+
   }
 
 }

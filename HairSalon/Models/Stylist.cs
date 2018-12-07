@@ -84,7 +84,7 @@ namespace HairSalon.Models
       cmd.Parameters.AddWithValue("@StylistFirstName", this._firstName);
       cmd.Parameters.AddWithValue("@StylistLastName", this._lastName);
       cmd.ExecuteNonQuery();
-      _id = (int) cmd.LastInsertedId;
+      // _id = (int) cmd.LastInsertedId;
 
       conn.Close();
       if (conn != null)

@@ -72,22 +72,20 @@ namespace HairSalon.Tests
     [TestMethod]
     public void Save_SavesToDatabase_StylistList()
     {
-      Stylist newStylist = new Stylist("Stephan", "Blair", 1);
+      Stylist newStylist = new Stylist("Stephan", "Blair");
       List<Stylist> expectedList = new List<Stylist>{newStylist};
 
       newStylist.Save();
       List<Stylist> actualList = Stylist.GetAll();
 
-      Console.WriteLine(expectedList.Count);
-      Console.WriteLine(actualList.Count);
       CollectionAssert.AreEqual(expectedList, actualList);
     }
 
     [TestMethod]
     public void GetAll_ReturnsAllStylists_StylistList()
     {
-      Stylist stylistOne = new Stylist("Stephan", "Blair", 1);
-      Stylist stylistTwo = new Stylist("Holly", "Kindred", 1);
+      Stylist stylistOne = new Stylist("Stephan", "Blair");
+      Stylist stylistTwo = new Stylist("Holly", "Kindred");
       List<Stylist> expectedList = new List<Stylist>{ stylistOne, stylistTwo };
 
       stylistOne.Save();
@@ -95,6 +93,23 @@ namespace HairSalon.Tests
       List<Stylist> actualList = Stylist.GetAll();
 
       CollectionAssert.AreEqual(expectedList, actualList);
+    }
+
+    [TestMethod]
+    public void Save_AssignsId_Int()
+    {
+      Stylist stylistOne = new Stylist("Stephan", "Blair");
+      Stylist stylistTwo = new Stylist("Holly", "Kindred");
+      List<Stylist> expectedList = new List<Stylist>{ stylistOne, stylistTwo };
+
+      stylistOne.Save();
+      stylistTwo.Save();
+      List<Stylist> actualList = Stylist.GetAll();
+
+      Console.WriteLine(expectedList[1].GetId());
+      Console.WriteLine(actualList[1].GetId());
+
+      Assert.AreEqual(expectedList[1].GetId(), actualList[1].GetId());
     }
 
   }

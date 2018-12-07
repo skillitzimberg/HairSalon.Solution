@@ -43,5 +43,10 @@ namespace HairSalon.Models
       return _phoneNumber;
     }
 
+    public int GetStylistId()
+    {
+      return 3;
+    }
+
   }
 }

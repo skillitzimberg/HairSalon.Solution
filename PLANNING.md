@@ -162,6 +162,12 @@ Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{clientOne, clientTwo}
+##### 10: Client assigns id
+**Example:**  
+Input:
+clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
+Output: 2
 
 #### Stylist Model Specs
 ##### 1: StylistConstructor returns Stylist

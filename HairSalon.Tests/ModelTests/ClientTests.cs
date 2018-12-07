@@ -117,5 +117,19 @@ namespace HairSalon.TestTools
       CollectionAssert.AreEqual(expectedClientList, actualClientList);
     }
 
+    [TestMethod]
+    public void Save_AssignsId_Int()
+    {
+      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1, 1);
+      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2, 1);
+      List<Client> expectedClientList = new List<Client>{ clientOne, clientTwo };
+
+      clientOne.Save();
+      clientTwo.Save();
+      List<Client> actualClientList = Client.GetAll();
+
+      Assert.AreEqual(expectedClientList[1].GetId(), actualClientList[1].GetId());
+    }
+
   }
 }

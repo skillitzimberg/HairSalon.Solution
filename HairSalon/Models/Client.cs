@@ -139,7 +139,7 @@ namespace HairSalon.Models
       cmd.Parameters.AddWithValue("@ClientPhoneNumber", this._phoneNumber);
       cmd.Parameters.AddWithValue("@StylistId", this._stylistId);
       cmd.ExecuteNonQuery();
-      // _id = (int) cmd.LastInsertedId;
+      _id = (int) cmd.LastInsertedId;
 
       conn.Close();
       if (conn != null)

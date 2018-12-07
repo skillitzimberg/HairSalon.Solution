@@ -60,5 +60,16 @@ namespace HairSalon.TestTools
       Assert.AreEqual(expectedLastName, actualLastName);
     }
 
+    [TestMethod]
+    public void GetPhoneNumber_ReturnsPhoneNUmber_String()
+    {
+      string expectedPhoneNumber = "5038905118";
+      Client newClient = new Client("Scott", "Bergler", expectedPhoneNumber, 1, 1);
+
+      string actualPhoneNumber = newClient.GetPhoneNumber();
+
+      Assert.AreEqual(expectedPhoneNumber, actualPhoneNumber);
+    }
+
   }
 }

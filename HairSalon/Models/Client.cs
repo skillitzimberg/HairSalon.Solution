@@ -38,5 +38,10 @@ namespace HairSalon.Models
       return _lastName;
     }
 
+    public string GetPhoneNumber()
+    {
+      return "fail";
+    }
+
   }
 }

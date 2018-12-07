@@ -62,23 +62,23 @@ namespace HairSalon.Models
       }
     }
 
-    // public override bool Equals(System.Object otherClient)
-    // {
-    //   if (!(otherClient is Client))
-    //   {
-    //     return false;
-    //   }
-    //   else
-    //   {
-    //     Client newClient = (Client) otherClient;
-    //     bool idEquality = (this.GetId() == newClient.GetId());
-    //     bool firstNameEquality = (this.GetFirstName() == newClient.GetFirstName());
-    //     bool lastNameEquality = (this.GetLastName() == newClient.GetLastName());
-    //     bool phoneNumberEquality = (this.GetPhoneNumber() == newClient.GetPhoneNumber());
-    //     bool stylistEquality = this.GetStylistId() == newClient.GetStylistId();
-    //     return (idEquality && firstNameEquality && lastNameEquality && phoneNumberEquality && stylistEquality);
-    //   }
-    // }
+    public override bool Equals(System.Object otherClient)
+    {
+      if (!(otherClient is Client))
+      {
+        return false;
+      }
+      else
+      {
+        Client newClient = (Client) otherClient;
+        bool idEquality = (this.GetId() == newClient.GetId());
+        bool firstNameEquality = (this.GetFirstName() == newClient.GetFirstName());
+        bool lastNameEquality = (this.GetLastName() == newClient.GetLastName());
+        bool phoneNumberEquality = (this.GetPhoneNumber() == newClient.GetPhoneNumber());
+        bool stylistEquality = this.GetStylistId() == newClient.GetStylistId();
+        return (idEquality && firstNameEquality && lastNameEquality && phoneNumberEquality && stylistEquality);
+      }
+    }
 
     public static List<Client> GetAll()
     {

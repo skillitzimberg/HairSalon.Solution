@@ -120,122 +120,121 @@ Test that Save() saves to Database & GetAll() gets all clients.
 
 ###  Specs
 #### Client Model Specs
-##### Spec: ClientConstructor returns Client
+##### 1: ClientConstructor returns Client
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: Client - Scott Bergler
-##### Spec: Client returns client id
+##### 2: Client returns client id
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: 1
-##### Spec: Client returns client first name
+##### 3: Client returns client first name
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "Scott"
-##### Spec: Client returns client last name
+##### 4: Client returns client last name
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "Bergler"
-##### Spec: Client returns client phone number
+##### 5: Client returns client phone number
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "5038905118"
-##### Spec: Client returns stylist id
+##### 6: Client returns stylist id
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: 1
-##### Spec: Client returns empty list
+##### 7: Client returns empty list
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{}
-### Spec: Client clears database
+### 8: Client clears database
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{}
-### Spec: Client saves to database
+### 9: Client saves to database
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{clientOne, clientTwo}
-##### Spec: Client returns a list of all clients
+##### 10: Client returns a list of all clients
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{clientOne, clientTwo}
-
-##### Spec: Stylist deletes a client
-**Example:**  
-Input:
-clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
-clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
-Output: "Millicent", "Zimdars", "5034217832", 2, 1
 
 #### Stylist Model Specs
-##### Spec: StylistConstructor returns Stylist
+##### 1: StylistConstructor returns Stylist
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: Stylist - Scott Bergler
-##### Spec: Stylist returns stylist id
+##### 2: Stylist returns stylist id
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: 1
-##### Spec: Stylist returns stylist first name
+##### 3: Stylist returns stylist first name
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "Scott"
-##### Spec: Stylist returns stylist last name
+##### 4: Stylist returns stylist last name
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "Bergler"
-##### Spec: Stylist returns stylist phone number
+##### 5: Stylist returns stylist phone number
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "5038905118"
-##### Spec: Stylist returns stylist id
+##### 6: Stylist returns stylist id
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: 1
-##### Spec: Stylist returns empty list
+##### 7: Stylist returns empty list
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
 stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
 Output: List<Stylist>{}
-### Spec: Stylist clears database
+### 8: Stylist clears database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
 stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
 Output: List<Stylist>{}
-### Spec: Stylist saves to database
+### 9: Stylist saves to database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
 stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
-##### Spec: Stylist adds new stylist
+##### 10: Stylist adds new stylist
 **Example:**  
 Input: stylistOne: ("Stephan", "Blair", "5109083751", 1, 1)  
 Output: List<Stylist>{stylistOne}
-##### Spec: Stylist adds new client
+##### 11: Stylist adds new client
 **Example:**  
 Input: clientOne: ("Scott", "Bergler", "5038905118", 1, 1)  
 Output: List<Client>{clientOne}
-##### Spec: Stylist returns a list of all stylists
+##### 12: Stylist returns a list of all stylists
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
 stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
-##### Spec: Stylist deletes a stylist
+##### 13: Stylist deletes a stylist
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", "5109083751", 1, 1),  
 stylistTwo: ("Holly", "Kindred", "312859047", 2, 1)  
 Output: "Holly", "Kindred", "312859047", 2, 1
+##### 14: Stylist deletes a client
+**Example:**  
+Input:
+clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
+Output: "Millicent", "Zimdars", "5034217832", 2, 1

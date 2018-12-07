@@ -12,7 +12,7 @@ This app allows salon management to add and view details about stylists and thei
 ## Setup/Installation Requirements
 Clone the code from [GitHub](https://github.com/skillitzimberg/HairSalon.Solution).
 
-[SQl To Build Database](DATABASE.md).
+[SQl To Build Database](DATABASESQL.md).
 
 ## Known Bugs
 

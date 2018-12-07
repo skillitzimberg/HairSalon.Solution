@@ -26,5 +26,16 @@ namespace HairSalon.Tests
 
       Assert.AreEqual(expectedId, actualId);
     }
+
+    [TestMethod]
+    public void GetFirstName_ReturnsFirstName_String()
+    {
+      string expectedFirstName = "Stephan";
+      Stylist newStylist = new Stylist(expectedFirstName, "Blair", 1);
+
+      string actualFirstName = newStylist.GetFirstName();
+
+      Assert.AreEqual(expectedFirstName, actualFirstName);
+    }
   }
 }

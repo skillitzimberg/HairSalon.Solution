@@ -29,7 +29,7 @@ namespace HairSalon.Models
 
     public string GetLastName()
     {
-      return "_lastName";
+      return _lastName;
     }
 
   }

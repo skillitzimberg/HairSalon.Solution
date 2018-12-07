@@ -7,18 +7,17 @@ using HairSalon.Models;
 namespace HairSalon.TestTools
 {
   [TestClass]
-  public class ClientTest
+  public class ClientTest : IDisposable
   {
-    // public void Dispose()
-    // {
-    //    : IDisposable
-    //     Client.ClearAll();
-    // }
-    //
-    // public ClientTest()
-    // {
-    //   DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=scott_bergler_test;";
-    // }
+    public void Dispose()
+    {
+      Client.ClearAll();
+    }
+
+    public ClientTest()
+    {
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=scott_bergler_test;";
+    }
 
     [TestMethod]
     public void ClientConstructor_CreatesInstanceOfClient_Client()
@@ -80,6 +79,19 @@ namespace HairSalon.TestTools
       int actualStylistId = newClient.GetStylistId();
 
       Assert.AreEqual(expectedStylistId, actualStylistId);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_ItemList()
+    {
+      //Arrange
+      List<Client> expectedClientList = new List<Client> { };
+
+      //Act
+      List<Client> actualClientList = Client.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(expectedClientList, actualClientList);
     }
 
   }

@@ -48,5 +48,48 @@ namespace HairSalon.Models
       return _stylistId;
     }
 
+    public static void ClearAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM clients;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+       conn.Dispose();
+      }
+    }
+
+    public static List<Client> GetAll()
+    {
+      Client newClient = new Client("Scott", "Bergler", "5038905118", 1, 1);
+      List<Client> allClients = new List<Client> {newClient};
+
+      // List<Client> allClients = new List<Client> {};
+      // MySqlConnection conn = DB.Connection();
+      // conn.Open();
+      // MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      // cmd.CommandText = @"SELECT * FROM bottles;";
+      // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      // while(rdr.Read())
+      // {
+      //   int clientId = rdr.GetInt32(0);
+      //   string clientFirstName = rdr.GetString(1);
+      //   string clientLastName = rdr.GetString(2);
+      //   string clientPhoneNumber = rdr.GetString(3);
+      //   int stylistId = rdr.GetInt32(4);
+      //   Client newClient = new Client(clientFirstName, clientLastName, clientPhoneNumber, stylistId, clientId);
+      //   allClients.Add(newClient);
+      // }
+      // conn.Close();
+      // if (conn != null)
+      // {
+      //   conn.Dispose();
+      // }
+      return allClients;
+    }
+
   }
 }

@@ -36,7 +36,7 @@ namespace HairSalon.Models
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
-      var cmd = conn.CreateCommand() as MySqlCommand;
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"DELETE FROM stylists;";
       cmd.ExecuteNonQuery();
       conn.Close();
@@ -84,7 +84,7 @@ namespace HairSalon.Models
       cmd.Parameters.AddWithValue("@StylistFirstName", this._firstName);
       cmd.Parameters.AddWithValue("@StylistLastName", this._lastName);
       cmd.ExecuteNonQuery();
-      // _id = (int) cmd.LastInsertedId;
+      _id = (int) cmd.LastInsertedId;
 
       conn.Close();
       if (conn != null)

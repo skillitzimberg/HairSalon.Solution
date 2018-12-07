@@ -94,7 +94,7 @@ namespace HairSalon.Tests
     [TestMethod]
     public void Save_SavesToDatabase_ClientList()
     {
-      Client newClient = new Client("Scott", "Bergler", "5038905118", 1, 1);
+      Client newClient = new Client("Scott", "Bergler", "5038905118", 1);
       List<Client> expectedClientList = new List<Client>{newClient};
 
       newClient.Save();
@@ -106,8 +106,8 @@ namespace HairSalon.Tests
     [TestMethod]
     public void GetAll_ReturnsAllClients_ClientList()
     {
-      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1, 1);
-      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2, 1);
+      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1);
+      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2);
       List<Client> expectedClientList = new List<Client>{ clientOne, clientTwo };
 
       clientOne.Save();
@@ -120,14 +120,17 @@ namespace HairSalon.Tests
     [TestMethod]
     public void Save_AssignsId_Int()
     {
-      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1, 1);
-      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2, 1);
+      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1);
+      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2);
       List<Client> expectedClientList = new List<Client>{ clientOne, clientTwo };
 
       clientOne.Save();
       clientTwo.Save();
       List<Client> actualClientList = Client.GetAll();
 
+
+      Console.WriteLine(expectedClientList[1].GetId());
+      Console.WriteLine(actualClientList[1].GetId());
       Assert.AreEqual(expectedClientList[1].GetId(), actualClientList[1].GetId());
     }
 

@@ -148,5 +148,47 @@ namespace HairSalon.Models
       return allClients;
     }
 
+    public static Client Find(int id)
+    {
+      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1);
+      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2);
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM clients WHERE id = @thisId;";
+      MySqlParameter thisId = new MySqlParameter();
+      thisId.ParameterName = "@thisId";
+      thisId.Value = id;
+      cmd.Parameters.Add(thisId);
+      cmd.Parameters.AddWithValue("@thisId", id);
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int clientId = 0;
+      string clientFirstName = "";
+      string clientLastName = "";
+      string clientPhoneNumber = "";
+      int stylistId = 0;
+
+      while (rdr.Read())
+      {
+        clientId = rdr.GetInt32(0);
+        clientFirstName = rdr.GetString(1);
+        clientLastName = rdr.GetString(2);
+        clientPhoneNumber = rdr.GetString(3);
+        stylistId = rdr.GetInt32(4);
+      }
+      Client foundClient = new Client(clientFirstName, clientLastName, clientPhoneNumber, stylistId, clientId);
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return clientOne;
+
+      //To fail Find use below code:
+      //Item dummyItem = new Item("dummy item");
+      //return dummyItem;
+    }
+
   }
 }

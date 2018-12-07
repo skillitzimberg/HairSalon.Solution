@@ -106,9 +106,6 @@ namespace HairSalon.Tests
       stylistTwo.Save();
       List<Stylist> actualList = Stylist.GetAll();
 
-      Console.WriteLine(expectedList[1].GetId());
-      Console.WriteLine(actualList[1].GetId());
-
       Assert.AreEqual(expectedList[1].GetId(), actualList[1].GetId());
     }
 

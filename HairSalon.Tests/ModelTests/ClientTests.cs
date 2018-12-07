@@ -128,10 +128,20 @@ namespace HairSalon.Tests
       clientTwo.Save();
       List<Client> actualClientList = Client.GetAll();
 
-
-      Console.WriteLine(expectedClientList[1].GetId());
-      Console.WriteLine(actualClientList[1].GetId());
       Assert.AreEqual(expectedClientList[1].GetId(), actualClientList[1].GetId());
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectClientFromDatabase_Client()
+    {
+      Client clientOne = new Client("Scott", "Bergler", "5038905118", 1);
+      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", 2);
+
+      clientOne.Save();
+      clientTwo.Save();
+      Client foundClient = Client.Find(clientTwo.GetId());
+
+      Assert.AreEqual(clientTwo, foundClient);
     }
 
   }

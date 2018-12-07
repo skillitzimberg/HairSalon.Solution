@@ -45,7 +45,7 @@ namespace HairSalon.Models
 
     public int GetStylistId()
     {
-      return 3;
+      return _stylistId;
     }
 
   }

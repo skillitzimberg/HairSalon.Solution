@@ -96,24 +96,24 @@ namespace HairSalon.Models
     public static List<Stylist> GetAll()
     {
       List<Stylist> allStylists = new List<Stylist> {};
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM stylists;";
-      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-      while(rdr.Read())
-      {
-        int stylistId = rdr.GetInt32(0);
-        string stylistFirstName = rdr.GetString(1);
-        string stylistLastName = rdr.GetString(2);
-        Stylist newStylist = new Stylist(stylistFirstName, stylistLastName, stylistId);
-        allStylists.Add(newStylist);
-      }
-      conn.Close();
-      if (conn != null)
-      {
-        conn.Dispose();
-      }
+      // MySqlConnection conn = DB.Connection();
+      // conn.Open();
+      // MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      // cmd.CommandText = @"SELECT * FROM stylists;";
+      // MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      // while(rdr.Read())
+      // {
+      //   int stylistId = rdr.GetInt32(0);
+      //   string stylistFirstName = rdr.GetString(1);
+      //   string stylistLastName = rdr.GetString(2);
+      //   Stylist newStylist = new Stylist(stylistFirstName, stylistLastName, stylistId);
+      //   allStylists.Add(newStylist);
+      // }
+      // conn.Close();
+      // if (conn != null)
+      // {
+      //   conn.Dispose();
+      // }
       return allStylists;
     }
 

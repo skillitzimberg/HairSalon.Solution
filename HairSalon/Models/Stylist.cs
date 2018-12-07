@@ -32,37 +32,66 @@ namespace HairSalon.Models
       return _lastName;
     }
 
-    // public static void ClearAll()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"DELETE FROM stylists;";
-    //   cmd.ExecuteNonQuery();
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //    conn.Dispose();
-    //   }
-    // }
+    public static void ClearAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM stylists;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+       conn.Dispose();
+      }
+    }
 
-    // public override bool Equals(System.Object otherStylist)
-    // {
-    //   if (!(otherStylist is Stylist))
-    //   {
-    //     return false;
-    //   }
-    //   else
-    //   {
-    //     Stylist newStylist = (Stylist) otherStylist;
-    //     bool idEquality = (this.GetId() == newStylist.GetId());
-    //     bool firstNameEquality = (this.GetFirstName() == newStylist.GetFirstName());
-    //     bool lastNameEquality = (this.GetLastName() == newStylist.GetLastName());
-    //     bool phoneNumberEquality = (this.GetPhoneNumber() == newStylist.GetPhoneNumber());
-    //     bool stylistEquality = this.GetStylistId() == newStylist.GetStylistId();
-    //     return (idEquality && firstNameEquality && lastNameEquality && phoneNumberEquality && stylistEquality);
-    //   }
-    // }
+    public override bool Equals(System.Object otherStylist)
+    {
+      if (!(otherStylist is Stylist))
+      {
+        return false;
+      }
+      else
+      {
+        Stylist newStylist = (Stylist) otherStylist;
+        bool idEquality = (this.GetId() == newStylist.GetId());
+        bool firstNameEquality = (this.GetFirstName() == newStylist.GetFirstName());
+        bool lastNameEquality = (this.GetLastName() == newStylist.GetLastName());
+
+        return (idEquality && firstNameEquality && lastNameEquality);
+      }
+    }
+
+    public void Save()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO stylists (first_name, last_name) VALUES (@StylistFirstName, @StylistLastName);";
+
+      MySqlParameter stylistFirstName = new MySqlParameter();
+      stylistFirstName.ParameterName = "@StylistFirstName";
+      stylistFirstName.Value = this._firstName;
+      cmd.Parameters.Add(stylistFirstName);
+
+      MySqlParameter stylistLastName = new MySqlParameter();
+      stylistLastName.ParameterName = "@StylistLastName";
+      stylistLastName.Value = this._lastName;
+      cmd.Parameters.Add(stylistLastName);
+
+      //Add this command for above 3 lines of code
+      cmd.Parameters.AddWithValue("@StylistFirstName", this._firstName);
+      cmd.Parameters.AddWithValue("@StylistLastName", this._lastName);
+      cmd.ExecuteNonQuery();
+      _id = (int) cmd.LastInsertedId;
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
 
     public static List<Stylist> GetAll()
     {
@@ -70,7 +99,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM clients;";
+      cmd.CommandText = @"SELECT * FROM stylists;";
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {

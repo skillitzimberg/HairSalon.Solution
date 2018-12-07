@@ -49,5 +49,16 @@ namespace HairSalon.TestTools
       Assert.AreEqual(expectedFirstName, actualFirstName);
     }
 
+    [TestMethod]
+    public void GetLastName_ReturnsLastName_String()
+    {
+      string expectedLastName = "Scott";
+      Client newClient = new Client(expectedLastName, "Bergler", "5038905118", 1, 1);
+
+      string actualLastName = newClient.GetLastName();
+
+      Assert.AreEqual(expectedLastName, actualLastName);
+    }
+
   }
 }

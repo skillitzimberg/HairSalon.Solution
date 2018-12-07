@@ -33,5 +33,10 @@ namespace HairSalon.Models
       return _firstName;
     }
 
+    public string GetLastName()
+    {
+      return "_firstName";
+    }
+
   }
 }

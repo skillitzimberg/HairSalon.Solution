@@ -40,7 +40,7 @@ namespace HairSalon.Models
 
     public string GetPhoneNumber()
     {
-      return "fail";
+      return _phoneNumber;
     }
 
   }

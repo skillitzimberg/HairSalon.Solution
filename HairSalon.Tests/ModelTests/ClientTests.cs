@@ -27,5 +27,16 @@ namespace HairSalon.TestTools
       Assert.AreEqual(typeof(Client), newClient.GetType());
     }
 
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      int expectedId = 1;
+      Client newClient = new Client("Scott", "Bergler", "5038905118", 1, expectedId);
+
+      int actualId = newClient.GetId();
+
+      Assert.AreEqual(expectedId, actualId);
+    }
+
   }
 }

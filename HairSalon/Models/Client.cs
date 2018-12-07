@@ -23,5 +23,10 @@ namespace HairSalon.Models
       _stylistId = stylistId;
     }
 
+    public int GetId()
+    {
+      return 9;
+    }
+
   }
 }

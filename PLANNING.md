@@ -1,12 +1,17 @@
 # Planning Document
 # Hair Salon
-Create an MVC web application for a hair salon. The owner should be able to add a list of the stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist.
+Create an MVC web application for a hair salon. The owner should be able to ADD STYLIST, and for each stylist, ADD CLIENT who see that stylist. The stylists work independently, so each client only belongs to a single stylist.
 
 ## User Stories
-As a salon employee, I need to be able to see a list of all our stylists.
-As an employee, I need to be able to select a stylist, see their details, and see a list of all clients that belong to that stylist.
-As an employee, I need to add new stylists to our system when they are hired.
-As an employee, I need to be able to add new clients to a specific stylist. I should not be able to add a client if no stylists have been added.
+Salon employees should to be able to:
+VIEW ALL STYLISTS,
+ADD STYLIST
+FIND STYLIST,
+VIEW STYLIST DETAILS,
+VIEW LIST OF ALL STYLIST CLIENTS.
+ADD CLIENT TO STYLIST
+A client cannot be added if no stylists have been added.
+
 ## Requirements
 **Naming**
 * Use your first name and last name to name your databases in the following way:
@@ -18,22 +23,68 @@ As an employee, I need to be able to add new clients to a specific stylist. I sh
 - Main Project Folder: HairSalon
 - Test Project Folder: HairSalon.Tests
 
-## Stylist database columns/class properties
+### Classes
+* Client
+* Stylist
+
+### Stylist database columns/class properties
 - id: PRIMARY KEY, AUTO_INCREMENT
 - first_name
 - last_name
 
-## Client database columns/class properties
+### Client database columns/class properties
 - id: PRIMARY KEY, AUTO_INCREMENT
 - first_name
 - last_name
 - phone_number
 - stylist_id: FOREIGN KEY
 
+## Models/Methods
+### Client
+- public int GetId()
+- public string GetFirstName()
+- public string GetLastName()
+- public string GetPhoneNumber()
+- public List<Client> GetAll()
+- public void Save()
+- public Client Find(int id)
+
+* FOR TESTING HOUSEKEEPING:
+- public override bool Equals(System.Object otherClient)
+- public void ClearAll()
+
+### Stylist
+- public int GetId()
+- public string GetFirstName()
+- public string GetLastName()
+- public List<Stylist> GetAll()
+- public void Save()
+- public Stylist Find(int id)
+- public List<Client> GetClients()
+
+* FOR TESTING HOUSEKEEPING:
+- public override bool Equals(System.Object otherClient)
+- public void ClearAll()
+
+### HomeController
+[HttpGet("/")] Index()
+
+### ClientController
+[HttpGet("/clients")] Index() - @Model: none
+[HttpGet("/clients/new")] New(int stylistId) - @Model: none
+[HttpPost("/clients")] Create() - @Model: Dictionary<string, object>
+[HttpGet("/clients/show")] Show(int id) - @Model: Dictionary<string, object>
+
+### StylistController
+[HttpGet("/stylists")] Index() - @Model: none
+[HttpGet("/stylists/new")] New() - @Model: none
+[HttpPost("/stylists")] Create() - @Model: Dictionary<string, object>
+[HttpGet("/stylists/show")] Show(int id) - @Model: Dictionary<string, object>
+
 ### CREATE DATABASE scott_bergler
 ### CREATE TABLE `scott_bergler`.`stylists` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(255) NOT NULL , `last_name` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
-### CREATE TABLE `scott_bergler`.`clients` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(255) NOT NULL , `last_name` VARCHAR(255) NOT NULL ,`region` VARCHAR(255) NOT NULL , `maker` VARCHAR(255) NOT NULL , `stylist_id` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+### CREATE TABLE `scott_bergler`.`clients` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(255) NOT NULL , `last_name` VARCHAR(255) NOT NULL ,`phone_number` VARCHAR(255) NOT NULL , `stylist_id` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 * Outline Classes/Tables
 * Outline Models/Methods
@@ -53,9 +104,6 @@ As an employee, I need to be able to add new clients to a specific stylist. I sh
 * Add Equals() method to type cast objects, "clients" in this case, that are in different parts of memory - one in RAM, one from the database - as the same object.
 * Test that Save() saves to Database & GetAll() gets all clients.
 
-### Classes
-* Client
-* Stylist
 
 ### Stylist Columns/Properties
 * ID

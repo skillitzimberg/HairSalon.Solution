@@ -82,7 +82,7 @@ namespace HairSalon.TestTools
     }
 
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_ItemList()
+    public void GetAll_ReturnsEmptyList_List()
     {
       //Arrange
       List<Client> expectedClientList = new List<Client> { };
@@ -93,6 +93,24 @@ namespace HairSalon.TestTools
       //Assert
       CollectionAssert.AreEqual(expectedClientList, actualClientList);
     }
+
+    [TestMethod]
+    public void Save_SavesToDatabase_ClientList()
+    {
+      //Arrange
+      Client newClient = new Client("Scott", "Bergler", "5038905118", 1, 1);
+      List<Client> expectedClientList = new List<Client>{newClient};
+
+      //Act
+      newClient.Save();
+      List<Client> actualClientList = Client.GetAll();
+
+      Console.WriteLine(expectedClientList[0].GetFirstName());
+      Console.WriteLine(actualClientList[0].GetFirstName());
+      //Assert
+      CollectionAssert.AreEqual(expectedClientList, actualClientList);
+    }
+
 
   }
 }

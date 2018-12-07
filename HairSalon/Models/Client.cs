@@ -62,6 +62,24 @@ namespace HairSalon.Models
       }
     }
 
+    // public override bool Equals(System.Object otherClient)
+    // {
+    //   if (!(otherClient is Client))
+    //   {
+    //     return false;
+    //   }
+    //   else
+    //   {
+    //     Client newClient = (Client) otherClient;
+    //     bool idEquality = (this.GetId() == newClient.GetId());
+    //     bool firstNameEquality = (this.GetFirstName() == newClient.GetFirstName());
+    //     bool lastNameEquality = (this.GetLastName() == newClient.GetLastName());
+    //     bool phoneNumberEquality = (this.GetPhoneNumber() == newClient.GetPhoneNumber());
+    //     bool stylistEquality = this.GetStylistId() == newClient.GetStylistId();
+    //     return (idEquality && firstNameEquality && lastNameEquality && phoneNumberEquality && stylistEquality);
+    //   }
+    // }
+
     public static List<Client> GetAll()
     {
       List<Client> allClients = new List<Client> {};
@@ -87,6 +105,52 @@ namespace HairSalon.Models
       }
       return allClients;
     }
+
+    public void Save()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO clients (first_name, last_name, phone_number, stylist_id) VALUES (@ClientFirstName, @ClientLastName, @ClientPhoneNumber, @StylistId);";
+
+      MySqlParameter clientFirstName = new MySqlParameter();
+      clientFirstName.ParameterName = "@ClientFirstName";
+      clientFirstName.Value = this._firstName;
+      cmd.Parameters.Add(clientFirstName);
+
+      MySqlParameter clientLastName = new MySqlParameter();
+      clientLastName.ParameterName = "@ClientLastName";
+      clientLastName.Value = this._lastName;
+      cmd.Parameters.Add(clientLastName);
+
+      MySqlParameter clientPhoneNumber = new MySqlParameter();
+      clientPhoneNumber.ParameterName = "@ClientPhoneNumber";
+      clientPhoneNumber.Value = this._phoneNumber;
+      cmd.Parameters.Add(clientPhoneNumber);
+
+      MySqlParameter stylistId = new MySqlParameter();
+      stylistId.ParameterName = "@StylistId";
+      stylistId.Value = this._stylistId;
+      cmd.Parameters.Add(stylistId);
+
+      //Add this command for above 3 lines of code
+      cmd.Parameters.AddWithValue("@ClientFirstName", this._firstName);
+      cmd.Parameters.AddWithValue("@ClientLastName", this._lastName);
+      cmd.Parameters.AddWithValue("@ClientPhoneNumber", this._phoneNumber);
+      cmd.Parameters.AddWithValue("@StylistId", this._stylistId);
+      cmd.ExecuteNonQuery();
+      _id = (int) cmd.LastInsertedId;
+
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      //To fail Saves to database method - declare method and keep it empty
+      //To fail Save AssignsId test -
+      //do not add the "_id = (int) cmd.LastInsertedId;" line
+    }
+
 
   }
 }

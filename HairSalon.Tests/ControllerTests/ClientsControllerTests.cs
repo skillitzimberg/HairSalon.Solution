@@ -7,7 +7,7 @@ using HairSalon.Models;
 namespace HairSalon.Tests
 {
   [TestClass]
-  public class ClientControllerTest
+  public class ClientsControllerTest
   {
 
 

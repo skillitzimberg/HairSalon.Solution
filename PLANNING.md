@@ -132,7 +132,7 @@ Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: List<Client>{}
-### 8: Client saves to database
+##### 8: Client saves to database
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1),  
@@ -181,13 +181,13 @@ Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
-### 17: Stylist clears database
+##### 17: Stylist clears database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
-### 18: Stylist saves to database
+##### 18: Stylist saves to database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
@@ -236,3 +236,9 @@ Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->
+
+### Stylist Controller Specs
+##### 24: Returns Correct View
+**Example:**  
+Input:  StylistsController controller
+Output: true

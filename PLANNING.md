@@ -240,5 +240,9 @@ Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->
 ### Stylist Controller Specs
 ##### 24: Returns Correct View
 **Example:**  
-Input:  StylistsController controller.Index()
+Input:  Index() view
+Output: true
+##### 25: Returns Correct Model Datatype
+**Example:**  
+Input:  List<Stylist>
 Output: true

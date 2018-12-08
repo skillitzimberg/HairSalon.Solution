@@ -254,3 +254,11 @@ Output: true
 **Example:**  
 Input:  Create() view
 Output: true
+##### 28: Create Redirects To Correct View
+**Example:**  
+Input:  Create() view
+Output: true
+##### 29: Show Returns Correct View
+**Example:**  
+Input:  Create() view
+Output: true

@@ -118,7 +118,7 @@ Output: "Scott"
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "Bergler"
-##### 5: Client returns client phone number
+##### 5: Client returns client phone numbe
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "5038905118"
@@ -129,33 +129,33 @@ Output: 1
 ##### 7: Client returns empty list
 **Example:**  
 Input:
-clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
-clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
+clientOne: ("Scott", "Bergler", "5038905118", 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: List<Client>{}
 ### 8: Client saves to database
 **Example:**  
 Input:
-clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
-clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
+clientOne: ("Scott", "Bergler", "5038905118", 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: List<Client>{clientOne, clientTwo}
 ##### 9: Client returns a list of all clients
 **Example:**  
 Input:
-clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
-clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
+clientOne: ("Scott", "Bergler", "5038905118", 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: List<Client>{clientOne, clientTwo}
 ##### 10: Client database assigns id
 **Example:**  
 Input:
-clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
-clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
+clientOne: ("Scott", "Bergler", "5038905118", 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: 2
 #### Find()
 ##### 11: Client finds client
 **Example:**  
 Input:
-clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
-clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)   
+clientOne: ("Scott", "Bergler", "5038905118", 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2)   
 Output: Client - Millicent Zimdars
 
 #### Stylist Model Specs

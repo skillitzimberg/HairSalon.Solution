@@ -8,24 +8,11 @@ namespace HairSalon.Controllers
   public class ClientsController : Controller
   {
 
-    [HttpGet("/clients")]
-    public ActionResult Index()
+    [HttpGet("/stylists/{stylistId}/clients/new")]
+    public ActionResult New(int stylistId)
     {
-      List<Client> allClients = Client.GetAll();
-      return View(allClients);
-    }
-
-    [HttpGet("/clients/new")]
-    public ActionResult CreateForm()
-    {
-      return View();
-    }
-
-    [HttpPost("/clients")]
-    public ActionResult Create(string description)
-    {
-      Client myClient = new Client(description);
-      return RedirectToAction("Index");
+       Category stylist = Stylist.Find(stylistId);
+       return View(stylist);
     }
 
   }

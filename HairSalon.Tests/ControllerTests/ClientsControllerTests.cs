@@ -10,6 +10,6 @@ namespace HairSalon.Tests
   public class ClientControllerTest
   {
 
-  }
 
+  }
 }

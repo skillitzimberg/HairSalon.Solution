@@ -144,7 +144,7 @@ Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: List<Client>{clientOne, clientTwo}
-##### 10: Client assigns id
+##### 10: Client database assigns id
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
@@ -197,29 +197,35 @@ Output: List<Stylist>{stylistOne, stylistTwo}
 **Example:**  
 Input: stylistOne: ("Stephan", "Blair", 1)  
 Output: List<Stylist>{stylistOne}
-##### 20: Stylist finds stylist
+##### 20: Stylist database assigns id
 **Example:**  
 Input:
-stylistOne: ("Stephan", "Blair", 1),  
-stylistTwo: ("Holly", "Kindred", 1)    
-Output: Client - Stephan Blair
-##### 21: Stylist adds new client
-**Example:**  
-Input: clientOne: ("Scott", "Bergler", "5038905118", 1, 1)  
-Output: List<Client>{clientOne}
-##### 22: Stylist returns a list of all stylists
+clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
+Output: 2
+##### 21: Stylist returns a list of all stylists
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
-##### 23: Stylist deletes a stylist
+##### 22: Stylist finds stylist
+**Example:**  
+Input:
+stylistOne: ("Stephan", "Blair", 1),  
+stylistTwo: ("Holly", "Kindred", 1)    
+Output: Client - Stephan Blair
+##### 23: Stylist adds new client
+**Example:**  
+Input: clientOne: ("Scott", "Bergler", "5038905118", 1, 1)  
+Output: List<Client>{clientOne}
+##### 24: Stylist deletes a stylist
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: "Holly", "Kindred", 1
-##### 24: Stylist deletes a client
+##### 25: Stylist deletes a client
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  

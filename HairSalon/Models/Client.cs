@@ -181,11 +181,8 @@ namespace HairSalon.Models
       {
         conn.Dispose();
       }
+      
       return foundClient;
-
-      //To fail Find use below code:
-      //Item dummyItem = new Item("dummy item");
-      //return dummyItem;
     }
 
   }

@@ -240,5 +240,5 @@ Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->
 ### Stylist Controller Specs
 ##### 24: Returns Correct View
 **Example:**  
-Input:  StylistsController controller
+Input:  StylistsController controller.Index()
 Output: true

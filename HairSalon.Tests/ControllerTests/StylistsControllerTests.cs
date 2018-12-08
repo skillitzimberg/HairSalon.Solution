@@ -9,24 +9,36 @@ namespace HairSalon.Tests
   [TestClass]
   public class StylistsControllerTest
   {
+    // [TestMethod]
+    // public void Index_ReturnsCorrectView_True()
+    // {
+    //   StylistsController controller = new StylistsController();
+    //
+    //   ActionResult indexView = controller.Index();
+    //
+    //   Assert.IsInstanceOfType(indexView, typeof(ViewResult));
+    // }
+    //
+    // [TestMethod]
+    // public void Index_ReturnsCorrectModel_True()
+    // {
+    //   ViewResult indexView = new StylistsController().Index() as ViewResult;
+    //
+    //   var modelDatatype = indexView.ViewData.Model;
+    //
+    //   Assert.IsInstanceOfType(modelDatatype, typeof(List<Stylist>));
+    // }
+
     [TestMethod]
-    public void Index_ReturnsCorrectView_True()
+    public void Index_ReturnsCorrectActionName_True()
     {
       StylistsController controller = new StylistsController();
 
-      ActionResult indexView = controller.Index();
+      RedirectToActionResult indexView = controller.Index() as RedirectToActionResult;
 
-      Assert.IsInstanceOfType(indexView, typeof(ViewResult));
-    }
+      string actionName = indexView.ActionName;
 
-    [TestMethod]
-    public void Index_ReturnsCorrectModel_True()
-    {
-      ViewResult indexView = new StylistsController().Index() as ViewResult;
-
-      var modelDatatype = indexView.ViewData.Model;
-
-      Assert.IsInstanceOfType(modelDatatype, typeof(List<Stylist>));
+      Assert.AreEqual(actionName, "Index");
     }
 
   }

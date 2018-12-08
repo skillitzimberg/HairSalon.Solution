@@ -8,5 +8,17 @@
       <li><a href="#">About</a></li>
     </ul>
   </nav>
-  <h1 id="banner">HairSalon Index.cshtml</h1>
+  <h1 id="banner">@Model["stylist"].GetFirstName() @Model["stylist"].GetLastName()</h1>
+
+  <h3>Here are all the items in this category:</h3>
+
+  <ol>
+  @foreach (var client in @Model["clients"])
+  {
+    <li><a href='/stylists/@Model["stylist"].GetId()/clients/@client.GetId()'>@client.GetFirstName() @client.GetLastName()</a></li>
+  }
+  </ol>
+
+  <p><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a></p>
+  <p><a href='/categories'>Return to stylists</a></p>
 </div>

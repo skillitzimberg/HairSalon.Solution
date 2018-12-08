@@ -71,5 +71,18 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(showView, typeof(ViewResult));
     }
 
+    [TestMethod]
+    public void Show_HasCorrectModelType_Dictionary()
+    {
+      //Arrange
+      ViewResult showView = new StylistsController().Index() as ViewResult;
+
+      //Act
+      var modelDatatype = showView.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(modelDatatype, typeof(Dictionary<string, object>));
+    }
+
   }
 }

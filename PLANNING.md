@@ -215,10 +215,13 @@ Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)    
 Output: Client - Stephan Blair
-##### 23: Stylist adds new client
+##### 23: Stylist adds new client to stylist roster
 **Example:**  
-Input: clientOne: ("Scott", "Bergler", "5038905118", 1, 1)  
-Output: List<Client>{clientOne}
+Input:  
+stylistOne: ("Stephan", "Blair", 1),  
+clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
+clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)
+Output: List<Client>{clientOne, clientTwo}
 ##### 24: Stylist deletes a stylist
 **Example:**  
 Input:

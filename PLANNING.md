@@ -222,6 +222,8 @@ stylistOne: ("Stephan", "Blair", 1),
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)
 Output: List<Client>{clientOne, clientTwo}
+
+<!-- These specs may come into play in a later version:
 ##### 24: Stylist deletes a stylist
 **Example:**  
 Input:
@@ -233,4 +235,4 @@ Output: "Holly", "Kindred", 1
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
-Output: "Millicent", "Zimdars", "5034217832", 2, 1
+Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->

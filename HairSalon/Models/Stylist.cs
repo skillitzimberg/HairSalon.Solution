@@ -120,12 +120,10 @@ namespace HairSalon.Models
 
     public static Stylist Find(int id)
     {
-      Stylist stylistOne = new Stylist("Stephan", "Blair");
-      Stylist stylistTwo = new Stylist("Holly", "Kindred");
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM clients WHERE id = @thisId;";
+      cmd.CommandText = @"SELECT * FROM stylists WHERE id = @thisId;";
       MySqlParameter thisId = new MySqlParameter();
       thisId.ParameterName = "@thisId";
       thisId.Value = id;
@@ -150,7 +148,7 @@ namespace HairSalon.Models
         conn.Dispose();
       }
 
-      return stylistOne;
+      return foundStylist;
     }
 
   }

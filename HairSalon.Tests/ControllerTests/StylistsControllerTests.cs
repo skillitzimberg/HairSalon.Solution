@@ -50,13 +50,25 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void Create_ReturnsCorrectModel_True()
+    public void Create_RedirectsToCorrectAction_Index()
     {
-      ViewResult createView = new StylistsController().Create("Scott", "Bergler") as ViewResult;
+      StylistsController controller = new StylistsController();
+      RedirectToActionResult actionResult = controller.Create("Scott", "Bergler") as RedirectToActionResult;
 
-      var modelDatatype = createView.ViewData.Model;
+      string result = actionResult.ActionName;
 
-      Assert.IsInstanceOfType(modelDatatype, typeof(List<Stylist>));
+      Assert.AreEqual(result, "Index");
+    }
+
+    [TestMethod]
+    public void Show_ReturnsCorrectView_True()
+    {
+      StylistsController controller = new StylistsController();
+      Stylist testStylist = new Stylist("Wes", "Cecil");
+      testStylist.Save();
+      ActionResult showView = controller.Show(testStylist.GetId());
+
+      Assert.IsInstanceOfType(showView, typeof(ViewResult));
     }
 
   }

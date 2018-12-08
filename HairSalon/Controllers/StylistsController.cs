@@ -11,7 +11,13 @@ namespace HairSalon.Controllers
     public ActionResult Index()
     {
       List<Stylist> allStylists = Stylist.GetAll();
-      return RedirectToAction("Show", allStylists);
+      return View(allStylists);
+    }
+
+    [HttpGet("/stylists/new")]
+    public ActionResult New()
+    {
+      return new EmptyResult();
     }
 
   }

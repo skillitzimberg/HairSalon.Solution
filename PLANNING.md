@@ -250,7 +250,7 @@ Output: true
 **Example:**  
 Input:  New() view
 Output: true
-##### 26: Create Returns Correct View
+##### 27: Create Returns Correct View
 **Example:**  
 Input:  Create() view
 Output: true

@@ -39,5 +39,15 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(newView, typeof(ViewResult));
     }
 
+    [TestMethod]
+    public void Create_ReturnsCorrectView_True()
+    {
+      StylistsController controller = new StylistsController();
+
+      ActionResult createView = controller.Create("Scott", "Bergler");
+
+      Assert.IsInstanceOfType(createView, typeof(ViewResult));
+    }
+
   }
 }

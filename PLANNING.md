@@ -238,11 +238,19 @@ clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)
 Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->
 
 ### Stylist Controller Specs
-##### 24: Index Returns Correct ActionResult
+##### 24: Index Returns Correct View
 **Example:**  
 Input:  Index() view
 Output: true
 ##### 25: Index Returns Correct Model Datatype
 **Example:**  
 Input:  List<Stylist>
+Output: true
+##### 26: New Returns Correct View
+**Example:**  
+Input:  New() view
+Output: true
+##### 26: Create Returns Correct View
+**Example:**  
+Input:  Create() view
 Output: true

@@ -240,32 +240,39 @@ Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->
 ### Stylist Controller Specs
 ##### 24: Index Returns Correct View
 **Example:**  
-Input:  Index() view
+Input:  indexView
 Output: true
 ##### 25: Index Returns Correct Model Datatype
 **Example:**  
-Input:  List<Stylist>
+Input:  modelDatatype
 Output: true
 ##### 26: New Returns Correct View
 **Example:**  
-Input:  New() view
+Input:  newView
 Output: true
-##### 27: Create Returns Correct View
+##### 27: Create Stylist Returns Correct View
 **Example:**  
-Input:  Create() view
+Input:  "Mindy", "StCyr"
 Output: true
-##### 28: Create Redirects To Correct View
+##### 28: Create Stylist Redirects To Correct View
 **Example:**  
-Input:  Create() view
+Input:  "Mindy", "StCyr"
 Output: true
 ##### 29: Show Returns Correct View
 **Example:**  
-Input:  Create() view
+Input:  "Wes", "Cecil"
+Output: true
+##### 30: Create Client  Returns Correct Action Name
+**Example:**  
+Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"
+Output: true
+##### 31: Create Client Returns Correct Model Datatype
+**Example:**  
+Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"
 Output: true
 
-
 ### Client Controller Specs
-##### 30: New Returns Correct View
+##### 32: New Returns Correct View
 **Example:**  
 Input:  New() view
 Output: true

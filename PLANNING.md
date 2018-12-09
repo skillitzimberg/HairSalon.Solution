@@ -276,3 +276,8 @@ Output: true
 **Example:**  
 Input:  New() view
 Output: true
+##### 33: Show Returns Correct View
+**Example:**  
+InputOne:  testStylist = new Stylist("Wes", "Cecil")
+InputTwo:  testClient = new Client("Scott", "Bergler", "5038905118", testStylist.GetId())
+Output: true

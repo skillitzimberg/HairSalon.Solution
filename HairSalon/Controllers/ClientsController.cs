@@ -12,7 +12,7 @@ namespace HairSalon.Controllers
     public ActionResult New(int stylistId)
     {
        Stylist stylist = Stylist.Find(stylistId);
-       return new EmptyResult();
+       return View();
     }
 
     // [HttpGet("/stylists/{stylistId}/clients/{clientId}")]

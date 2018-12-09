@@ -9,6 +9,16 @@ namespace HairSalon.Tests
   [TestClass]
   public class ClientsControllerTest
   {
+    public void Dispose()
+    {
+      Stylist.ClearAll();
+    }
+
+    public StylistsControllerTest()
+    {
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=scott_bergler_test;";
+    }
+    
     [TestMethod]
     public void New_ReturnsCorrectView_True()
     {

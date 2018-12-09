@@ -5,21 +5,23 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <span class="logo"><a href="/">HairSalon</a></span>
     <ul>
-      <li><a href="#">About</a></li>
+      <li><a href="/stylists">Stylists</a></li>
     </ul>
   </nav>
-  <h1 id="banner">HairSalon New.cshtml</h1>
+  <div class="content">
+    <h3>Add a new stylist</h3>
 
-  <form class="" action="/stylists" method="post">
-    <div class="form-group">
-      <label for="firstName"> </label>
-      <input type="text" name="firstName" id="firstName">
-    </div>
-    
-    <div class="form-group">
-      <label for="lastName"> </label>
-      <input type="text" name="lastName" id="lastName">
-    </div>
-    <button type="submit" class="btn-lg btn-primary">Add</button>
-  </form>
+    <form class="" action="/stylists" method="post">
+      <div class="form-group">
+        <label for="firstName"> </label>
+        <input type="text" name="firstName" id="firstName">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName"> </label>
+        <input type="text" name="lastName" id="lastName">
+      </div>
+      <button type="submit" class="btn-lg btn-primary">Add</button>
+    </form>
+  </div>
 </div>

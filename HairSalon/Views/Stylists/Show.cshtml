@@ -5,20 +5,20 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <span class="logo"><a href="/">HairSalon</a></span>
     <ul>
-      <li><a href="#">About</a></li>
+      <li><a href="/stylists">Stylists</a></li>
+      <li><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add client</a></li>
     </ul>
   </nav>
-  <h1 id="banner">@Model["stylist"].GetFirstName() @Model["stylist"].GetLastName()</h1>
+  <div class="content">
+    <h3>@Model["stylist"].GetFirstName() @Model["stylist"].GetLastName()</h3>
 
-  <h3>Here are all the items in this category:</h3>
+    <h3>Clients: </h3>
 
-  <ol>
-  @foreach (var client in @Model["clients"])
-  {
-    <li><a href='/stylists/@Model["stylist"].GetId()/clients/@client.GetId()'>@client.GetFirstName() @client.GetLastName()</a></li>
-  }
-  </ol>
-
-  <p><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add a new client</a></p>
-  <p><a href='/categories'>Return to stylists</a></p>
+    <ul>
+      @foreach (var client in @Model["clients"])
+      {
+        <h4><a href='/stylists/@Model["stylist"].GetId()/clients/@client.GetId()'>@client.GetFirstName() @client.GetLastName()</a></h4>
+      }
+    </ul>
+  </div>
 </div>

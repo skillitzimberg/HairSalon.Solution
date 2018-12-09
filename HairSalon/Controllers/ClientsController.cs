@@ -12,7 +12,7 @@ namespace HairSalon.Controllers
     public ActionResult New(int stylistId)
     {
        Stylist stylist = Stylist.Find(stylistId);
-       return View();
+       return View(stylist);
     }
 
     [HttpGet("/stylists/{stylistId}/clients/{clientId}")]
@@ -25,7 +25,7 @@ namespace HairSalon.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("client", client);
       model.Add("stylist", stylist);
-      return View();
+      return View(model);
     }
 
   }

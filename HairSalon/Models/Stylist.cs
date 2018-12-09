@@ -14,7 +14,7 @@ namespace HairSalon.Models
     {
       _firstName = firstName;
       _lastName = lastName;
-      _fullName = firstName + lastName;
+      _fullName = firstName + " " + lastName;
       _id = id;
     }
 
@@ -35,7 +35,7 @@ namespace HairSalon.Models
 
     public string GetFullName()
     {
-      return "_fullName";
+      return _fullName;
     }
 
     public static void ClearAll()

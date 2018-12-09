@@ -11,7 +11,7 @@ namespace HairSalon.Models
     private string _lastName;
     private string _phoneNumber;
     private int _id;
-
+    private string _fullName;
     private int _stylistId;
 
     public Client(string firstName, string lastName, string phoneNumber, int stylistId, int id = 0)
@@ -19,6 +19,7 @@ namespace HairSalon.Models
       _id = id;
       _firstName = firstName;
       _lastName = lastName;
+      _fullName = firstName + " " + lastName;
       _phoneNumber = phoneNumber;
       _stylistId = stylistId;
     }
@@ -37,6 +38,12 @@ namespace HairSalon.Models
     {
       return _lastName;
     }
+
+    public string GetClientName()
+    {
+      return "_fullName";
+    }
+
 
     public string GetPhoneNumber()
     {
@@ -181,7 +188,7 @@ namespace HairSalon.Models
       {
         conn.Dispose();
       }
-      
+
       return foundClient;
     }
 

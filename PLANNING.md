@@ -4,13 +4,13 @@ Create an MVC web application for a hair salon. The owner should be able to ADD 
 
 ## User Stories
 Salon employees should to be able to:
-* VIEW ALL STYLISTS,
+* VIEW ALL STYLISTS
 * ADD STYLIST
-* FIND STYLIST,
+* FIND STYLIST
 * VIEW STYLIST DETAILS,
-* VIEW LIST OF ALL STYLIST CLIENTS.
+* VIEW LIST OF ALL STYLIST CLIENTS
 * ADD CLIENT TO STYLIST
-* A client cannot be added if no stylists have been added.
+* A client cannot be added if no stylists have been added
 
 ## Requirements
 **Naming**
@@ -63,7 +63,7 @@ Salon employees should to be able to:
 - public List<Client> GetClients()
 
 **FOR TESTING HOUSEKEEPING:**
-- public override bool Equals(System.Object otherClient)
+- public override bool Equals(System.Object otherStylist)
 - public void ClearAll()
 
 ### HomeController
@@ -240,44 +240,44 @@ Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->
 ### Stylist Controller Specs
 ##### 24: Index Returns Correct View
 **Example:**  
-Input:  indexView
+Input:  indexView  
 Output: true
 ##### 25: Index Returns Correct Model Datatype
 **Example:**  
-Input:  modelDatatype
+Input:  modelDatatype  
 Output: true
 ##### 26: New Returns Correct View
 **Example:**  
-Input:  newView
+Input:  newView  
 Output: true
 ##### 27: Create Stylist Returns Correct View
 **Example:**  
-Input:  "Mindy", "StCyr"
+Input:  "Mindy", "StCyr"  
 Output: true
 ##### 28: Create Stylist Redirects To Correct View
 **Example:**  
-Input:  "Mindy", "StCyr"
+Input:  "Mindy", "StCyr"  
 Output: true
 ##### 29: Show Returns Correct View
 **Example:**  
-Input:  "Wes", "Cecil"
+Input:  "Wes", "Cecil"  
 Output: true
 ##### 30: Create Client  Returns Correct Action Name
 **Example:**  
-Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"
+Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"  
 Output: true
 ##### 31: Create Client Returns Correct Model Datatype
 **Example:**  
-Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"
+Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"  
 Output: true
 
 ### Client Controller Specs
 ##### 32: New Returns Correct View
 **Example:**  
-Input:  New() view
+Input:  New() view  
 Output: true
 ##### 33: Show Returns Correct View
 **Example:**  
-InputOne:  testStylist = new Stylist("Wes", "Cecil")
-InputTwo:  testClient = new Client("Scott", "Bergler", "5038905118", testStylist.GetId())
+InputOne:  testStylist = new Stylist("Wes", "Cecil")  
+InputTwo:  testClient = new Client("Scott", "Bergler", "5038905118",   testStylist.GetId())
 Output: true

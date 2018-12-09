@@ -25,7 +25,7 @@ namespace HairSalon.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("client", client);
       model.Add("stylist", stylist);
-      return new EmptyResult();
+      return View();
     }
 
   }

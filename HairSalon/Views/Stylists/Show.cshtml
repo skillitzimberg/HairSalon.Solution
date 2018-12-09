@@ -10,14 +10,14 @@
     </ul>
   </nav>
   <div class="content">
-    <h3>@Model["stylist"].GetFirstName() @Model["stylist"].GetLastName()</h3>
+    <h3>@Model["stylist"].GetFullName()</h3>
 
     <h3>Clients: </h3>
 
     <ul>
       @foreach (var client in @Model["clients"])
       {
-        <h4><a href='/stylists/@Model["stylist"].GetId()/clients/@client.GetId()'>@client.GetFirstName() @client.GetLastName()</a></h4>
+        <h4><a href='/stylists/@Model["stylist"].GetId()/clients/@client.GetId()'>@client.GetClientName()</a></h4>
       }
     </ul>
   </div>

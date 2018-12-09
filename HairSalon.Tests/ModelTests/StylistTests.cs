@@ -60,84 +60,95 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_List()
+    public void GetFullName_ReturnsFullName_String()
     {
-      List<Stylist> expectedStylistList = new List<Stylist> { };
+      string expectedFullName = "Stephan Blair";
+      Stylist newStylist = new Stylist("Stephan", "Blair", 1);
 
-      List<Stylist> actualStylistList = Stylist.GetAll();
+      string actualFullName = newStylist.GetFullName();
 
-      CollectionAssert.AreEqual(expectedStylistList, actualStylistList);
+      Assert.AreEqual(expectedFullName, actualFullName);
     }
-
-    [TestMethod]
-    public void Save_SavesToDatabase_StylistList()
-    {
-      Stylist newStylist = new Stylist("Stephan", "Blair");
-      List<Stylist> expectedList = new List<Stylist>{newStylist};
-
-      newStylist.Save();
-      List<Stylist> actualList = Stylist.GetAll();
-
-      CollectionAssert.AreEqual(expectedList, actualList);
-    }
-
-    [TestMethod]
-    public void GetAll_ReturnsAllStylists_StylistList()
-    {
-      Stylist stylistOne = new Stylist("Stephan", "Blair");
-      Stylist stylistTwo = new Stylist("Holly", "Kindred");
-      List<Stylist> expectedList = new List<Stylist>{ stylistOne, stylistTwo };
-
-      stylistOne.Save();
-      stylistTwo.Save();
-      List<Stylist> actualList = Stylist.GetAll();
-
-      CollectionAssert.AreEqual(expectedList, actualList);
-    }
-
-    [TestMethod]
-    public void Save_AssignsId_Int()
-    {
-      Stylist stylistOne = new Stylist("Stephan", "Blair");
-      Stylist stylistTwo = new Stylist("Holly", "Kindred");
-      List<Stylist> expectedList = new List<Stylist>{ stylistOne, stylistTwo };
-
-      stylistOne.Save();
-      stylistTwo.Save();
-      List<Stylist> actualList = Stylist.GetAll();
-
-      Assert.AreEqual(expectedList[1].GetId(), actualList[1].GetId());
-    }
-
-    [TestMethod]
-    public void Find_ReturnsCorrectStylistFromDatabase_Stylist()
-    {
-      Stylist stylistOne = new Stylist("Stephan", "Blair");
-      Stylist stylistTwo = new Stylist("Holly", "Kindred");
-
-      stylistOne.Save();
-      stylistTwo.Save();
-      Stylist foundStylist = Stylist.Find(stylistTwo.GetId());
-
-      Assert.AreEqual(stylistTwo, foundStylist);
-    }
-
-    [TestMethod]
-    public void GetClients_ReturnsAllOfAStylistsClients_ClientList()
-    {
-      Stylist stylistOne = new Stylist("Stephan", "Blair", 1);
-      stylistOne.Save();
-      Client clientOne = new Client("Scott", "Bergler", "5038905118", stylistOne.GetId());
-      Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", stylistOne.GetId());
-      clientOne.Save();
-      clientTwo.Save();
-
-      List<Client> testClientList = new List<Client> { clientOne, clientTwo };
-
-      List<Client> clients = stylistOne.GetClients();
-
-      CollectionAssert.AreEqual(testClientList, clients);
-    }
+    //
+    // [TestMethod]
+    // public void GetAll_ReturnsEmptyList_List()
+    // {
+    //   List<Stylist> expectedStylistList = new List<Stylist> { };
+    //
+    //   List<Stylist> actualStylistList = Stylist.GetAll();
+    //
+    //   CollectionAssert.AreEqual(expectedStylistList, actualStylistList);
+    // }
+    //
+    // [TestMethod]
+    // public void Save_SavesToDatabase_StylistList()
+    // {
+    //   Stylist newStylist = new Stylist("Stephan", "Blair");
+    //   List<Stylist> expectedList = new List<Stylist>{newStylist};
+    //
+    //   newStylist.Save();
+    //   List<Stylist> actualList = Stylist.GetAll();
+    //
+    //   CollectionAssert.AreEqual(expectedList, actualList);
+    // }
+    //
+    // [TestMethod]
+    // public void GetAll_ReturnsAllStylists_StylistList()
+    // {
+    //   Stylist stylistOne = new Stylist("Stephan", "Blair");
+    //   Stylist stylistTwo = new Stylist("Holly", "Kindred");
+    //   List<Stylist> expectedList = new List<Stylist>{ stylistOne, stylistTwo };
+    //
+    //   stylistOne.Save();
+    //   stylistTwo.Save();
+    //   List<Stylist> actualList = Stylist.GetAll();
+    //
+    //   CollectionAssert.AreEqual(expectedList, actualList);
+    // }
+    //
+    // [TestMethod]
+    // public void Save_AssignsId_Int()
+    // {
+    //   Stylist stylistOne = new Stylist("Stephan", "Blair");
+    //   Stylist stylistTwo = new Stylist("Holly", "Kindred");
+    //   List<Stylist> expectedList = new List<Stylist>{ stylistOne, stylistTwo };
+    //
+    //   stylistOne.Save();
+    //   stylistTwo.Save();
+    //   List<Stylist> actualList = Stylist.GetAll();
+    //
+    //   Assert.AreEqual(expectedList[1].GetId(), actualList[1].GetId());
+    // }
+    //
+    // [TestMethod]
+    // public void Find_ReturnsCorrectStylistFromDatabase_Stylist()
+    // {
+    //   Stylist stylistOne = new Stylist("Stephan", "Blair");
+    //   Stylist stylistTwo = new Stylist("Holly", "Kindred");
+    //
+    //   stylistOne.Save();
+    //   stylistTwo.Save();
+    //   Stylist foundStylist = Stylist.Find(stylistTwo.GetId());
+    //
+    //   Assert.AreEqual(stylistTwo, foundStylist);
+    // }
+    //
+    // [TestMethod]
+    // public void GetClients_ReturnsAllOfAStylistsClients_ClientList()
+    // {
+    //   Stylist stylistOne = new Stylist("Stephan", "Blair", 1);
+    //   stylistOne.Save();
+    //   Client clientOne = new Client("Scott", "Bergler", "5038905118", stylistOne.GetId());
+    //   Client clientTwo = new Client("Millicent", "Zimdars", "5034217832", stylistOne.GetId());
+    //   clientOne.Save();
+    //   clientTwo.Save();
+    //
+    //   List<Client> testClientList = new List<Client> { clientOne, clientTwo };
+    //
+    //   List<Client> clients = stylistOne.GetClients();
+    //
+    //   CollectionAssert.AreEqual(testClientList, clients);
+    // }
 
 
   }

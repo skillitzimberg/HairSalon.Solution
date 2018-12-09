@@ -5,14 +5,17 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <span class="logo"><a href="/">HairSalon</a></span>
     <ul>
-      <li><a href="/stylists">Stylists</a></li>
-      <li><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add new client</a></li>
+      <li><a href="/stylists">View All Stylists</a></li>
+      <li><a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add New Client</a></li>
     </ul>
   </nav>
   <div class="content">
+    <h3>Stylist: @Model["stylist"].GetFirstName() @Model["stylist"].GetLastName()</h3>
     <h3>Client Details: </h3>
 
+    <p>Name:</p>
     <h2>@Model["client"].GetFirstName() @Model["client"].GetLastName()</h2>
+    <p>Phone Number:</p>
     <h3>@Model["client"].GetPhoneNumber()</h3>
   </div>
 </div>

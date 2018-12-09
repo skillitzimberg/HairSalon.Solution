@@ -9,11 +9,12 @@ namespace HairSalon.Models
     private string _firstName;
     private string _lastName;
     private int _id;
-
+    private string _fullName;
     public Stylist(string firstName, string lastName, int id = 0)
     {
       _firstName = firstName;
       _lastName = lastName;
+      _fullName = firstName + lastName;
       _id = id;
     }
 
@@ -30,6 +31,11 @@ namespace HairSalon.Models
     public string GetLastName()
     {
       return _lastName;
+    }
+
+    public string GetFullName()
+    {
+      return "_fullName";
     }
 
     public static void ClearAll()
@@ -99,7 +105,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM stylists;";
+      cmd.CommandText = @"SELECT * FROM stylists ORDER BY last_name ASC;";
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
@@ -157,7 +163,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM clients WHERE stylist_id = @stylist_id;";
+      cmd.CommandText = @"SELECT * FROM clients WHERE stylist_id = @stylist_id ORDER BY last_name ASC;";
       MySqlParameter stylistId = new MySqlParameter();
       stylistId.ParameterName = "@stylist_id";
       stylistId.Value = this._id;

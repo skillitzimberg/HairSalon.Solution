@@ -14,11 +14,11 @@ namespace HairSalon.Tests
       Stylist.ClearAll();
     }
 
-    public StylistsControllerTest()
+    public ClientsControllerTest()
     {
       DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=scott_bergler_test;";
     }
-    
+
     [TestMethod]
     public void New_ReturnsCorrectView_True()
     {

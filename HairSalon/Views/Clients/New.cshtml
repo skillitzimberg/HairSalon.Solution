@@ -5,7 +5,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <span class="logo"><a href="/">HairSalon</a></span>
     <ul>
-      <li><a href="/stylists">Stylists</a></li>
+      <li><a href="/stylists">View All Stylists</a></li>
     </ul>
   </nav>
   <div class="content">
@@ -25,7 +25,8 @@
 
       <div class="form-group">
         <label for="phoneNumber"> </label>
-        <input type="text" name="phoneNumber" id="phoneNumber">
+        <input type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+       required placeholder="555-555-5555">
       </div>
 
       <button type="submit" class="btn-lg btn-primary">Add Client</button>

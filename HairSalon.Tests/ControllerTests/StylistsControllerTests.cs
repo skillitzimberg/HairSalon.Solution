@@ -9,6 +9,17 @@ namespace HairSalon.Tests
   [TestClass]
   public class StylistsControllerTest
   {
+
+    public void Dispose()
+    {
+      Stylist.ClearAll();
+    }
+
+    public StylistsControllerTest()
+    {
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=scott_bergler_test;";
+    }
+
     [TestMethod]
     public void Index_ReturnsCorrectView_True()
     {
@@ -44,20 +55,20 @@ namespace HairSalon.Tests
     {
       StylistsController controller = new StylistsController();
 
-      ActionResult createView = controller.Create("Scott", "Bergler");
+      ActionResult createView = controller.Create("Mindy", "StCyr");
 
       Assert.IsInstanceOfType(createView, typeof(ViewResult));
     }
 
     [TestMethod]
-    public void Create_RedirectsToCorrectAction_Index()
+    public void CreateStylist_RedirectsToCorrectAction_Index()
     {
       StylistsController controller = new StylistsController();
-      RedirectToActionResult actionResult = controller.Create("Scott", "Bergler") as RedirectToActionResult;
+      RedirectToActionResult actionResult = controller.Create("Mindy", "StCyr") as RedirectToActionResult;
 
-      string result = actionResult.ActionName;
+      string actionName = actionResult.ActionName;
 
-      Assert.AreEqual(result, "Index");
+      Assert.AreEqual(actionName, "Index");
     }
 
     [TestMethod]
@@ -82,6 +93,30 @@ namespace HairSalon.Tests
 
       Assert.IsInstanceOfType(modelDatatype, typeof(Dictionary<string, object>));
     }
+
+    [TestMethod]
+    public void CreateClient_ReturnsCorrectView_True()
+    {
+      StylistsController controller = new StylistsController();
+      Stylist testStylist = new Stylist("Mindy", "StCyr");
+      testStylist.Save();
+
+      ActionResult createView = controller.Create(testStylist.GetId(), "Scott", "Bergler", "5038905118");
+
+      Assert.IsInstanceOfType(createView, typeof(ViewResult));
+    }
+
+    // [TestMethod]
+    // public void CreateClient_ReturnsCorrectView_True()
+    // {
+    //   StylistsController controller = new StylistsController();
+    //   RedirectToActionResult actionResult = controller.Create("Scott", "Bergler", "5038905118") as RedirectToActionResult;
+    //
+    //   string actionName = actionResult.ActionName;
+    //
+    //   Assert.AreEqual(actionName, "Index");
+    // }
+
 
   }
 }

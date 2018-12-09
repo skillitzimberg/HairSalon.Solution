@@ -262,3 +262,10 @@ Output: true
 **Example:**  
 Input:  Create() view
 Output: true
+
+
+### Client Controller Specs
+##### 30: New Returns Correct View
+**Example:**  
+Input:  New() view
+Output: true

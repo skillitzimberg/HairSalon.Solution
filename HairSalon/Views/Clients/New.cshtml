@@ -8,17 +8,25 @@
       <li><a href="#">About</a></li>
     </ul>
   </nav>
-  <h1 id="banner">HairSalon New.cshtml</h1>
+  <h1 id="banner">Add a client for @Model.GetFirstName() @Model.GetLastName()</h1>
 
   <form class="" action="" method="post">
+    <input type="hidden" name="stylistId" id="stylistId" value="@Model.GetId">
     <div class="form-group">
-      <label for=""> </label>
-      <input type="text" name="" id="">
+      <label for="firstName"> </label>
+      <input type="text" name="firstName" id="firstName">
     </div>
+
     <div class="form-group">
-      <label for=""> </label>
-      <input type="text" name="" id="">
+      <label for="lastName"> </label>
+      <input type="text" name="lastName" id="lastName">
     </div>
-    <button type="submit" class="btn-lg btn-primary">Go!</button>
+
+    <div class="form-group">
+      <label for="phoneNumber"> </label>
+      <input type="text" name="phoneNumber" id="phoneNumber">
+    </div>
+
+    <button type="submit" class="btn-lg btn-primary">Add Client</button>
   </form>
 </div>

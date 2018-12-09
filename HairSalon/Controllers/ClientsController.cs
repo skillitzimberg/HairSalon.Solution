@@ -7,18 +7,25 @@ namespace HairSalon.Controllers
 {
   public class ClientsController : Controller
   {
-    // [HttpGet("/stylists/{stylistId}/clients")]
-    // public ActionResult Index()
-    // {
-    //    List<Client> stylistClients = Stylist.GetClients(stylistId);
-    //    return View(stylistClients);
-    // }
-    //
+
     // [HttpGet("/stylists/{stylistId}/clients/new")]
     // public ActionResult New(int stylistId)
     // {
     //    Stylist stylist = Stylist.Find(stylistId);
-    //    return View(stylist);
+    //    return new EmptyResult();
+    // }
+
+    // [HttpGet("/stylists/{stylistId}/clients/{clientId}")]
+    // public ActionResult Show(int stylistId, int clientId)
+    // {
+    //   Client client = Client.Find(clientId);
+    //
+    //   Stylist stylist = Stylist.Find(stylistId);
+    //
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   model.Add("client", client);
+    //   model.Add("stylist", stylist);
+    //   return View(model);
     // }
 
   }

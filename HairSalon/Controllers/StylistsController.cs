@@ -50,7 +50,7 @@ namespace HairSalon.Controllers
       List<Client> stylistClients = foundStylist.GetClients();
       model.Add("stylist", foundStylist);
       model.Add("clients", stylistClients);
-      return View("Show", model);
+      return View("Show", 0);
     }
 
   }

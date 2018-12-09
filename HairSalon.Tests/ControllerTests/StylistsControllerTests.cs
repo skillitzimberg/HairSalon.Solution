@@ -107,7 +107,7 @@ namespace HairSalon.Tests
     }
 
     [TestMethod]
-    public void CreateClient_ReturnsCorrectActionName_True()
+    public void CreateClient_ReturnsCorrectActionName_Show()
     {
       StylistsController controller = new StylistsController();
       Stylist testStylist = new Stylist("Mindy", "StCyr");
@@ -117,6 +117,18 @@ namespace HairSalon.Tests
       string actionName = actionResult.ActionName;
 
       Assert.AreEqual(actionName, "Show");
+    }
+
+    [TestMethod]
+    public void CreateClient_HasCorrectModelDatatype_True()
+    {
+      Stylist testStylist = new Stylist("Wes", "Cecil");
+      testStylist.Save();
+      ViewResult createView = new StylistsController().Create(testStylist.GetId(), "Scott", "Bergler", "5038905118") as ViewResult;
+
+      var modelDatatype = createView.ViewData.Model;
+
+      Assert.IsInstanceOfType(modelDatatype, typeof(Dictionary<string, object>));
     }
 
 

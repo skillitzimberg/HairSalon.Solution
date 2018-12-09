@@ -14,11 +14,9 @@
 
     <h3>Clients: </h3>
 
-    <ul>
       @foreach (var client in @Model["clients"])
       {
         <h4><a href='/stylists/@Model["stylist"].GetId()/clients/@client.GetId()'>@client.GetClientName()</a></h4>
       }
-    </ul>
   </div>
 </div>

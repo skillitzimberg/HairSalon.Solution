@@ -7,7 +7,7 @@ Salon employees should to be able to:
 * VIEW ALL STYLISTS
 * ADD STYLIST
 * FIND STYLIST
-* VIEW STYLIST DETAILS,
+* VIEW STYLIST DETAILS
 * VIEW LIST OF ALL STYLIST CLIENTS
 * ADD CLIENT TO STYLIST
 * A client cannot be added if no stylists have been added
@@ -84,6 +84,7 @@ Salon employees should to be able to:
 #### GENERAL STEPS TAKEN
 Outline Classes/Tables  
 Outline Models/Methods  
+Write Specs  
 Create Database/tables  
 Create Test Database  
 Export Database  
@@ -106,50 +107,60 @@ Test that Save() saves to Database & GetAll() gets all clients.
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: Client - Scott Bergler
+
 ##### 2: Client returns client id
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: 1
+
 ##### 3: Client returns client first name
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "Scott"
+
 ##### 4: Client returns client last name
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "Bergler"
+
 ##### 5: Client returns client phone numbe
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: "5038905118"
+
 ##### 6: Client returns stylist id
 **Example:**  
 Input:  "Scott", "Bergler", "5038905118", 1, 1  
 Output: 1
+
 ##### 7: Client returns empty list
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: List<Client>{}
+
 ##### 8: Client saves to database
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: List<Client>{clientOne, clientTwo}
+
 ##### 9: Client returns a list of all clients
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: List<Client>{clientOne, clientTwo}
+
 ##### 10: Client database assigns id
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2)  
 Output: 2
+
 #### Find()
 ##### 11: Client finds client
 **Example:**  
@@ -163,58 +174,69 @@ Output: Client - Millicent Zimdars
 **Example:**  
 Input:  "Stephan", "Blair", 1  
 Output: Stylist - Stephan Blair
+
 ##### 13: Stylist returns stylist id
 **Example:**  
 Input:  "Stephan", "Blair", 1  
 Output: 1
+
 ##### 14: Stylist returns stylist first name
 **Example:**  
 Input:  "Stephan", "Blair", 1  
 Output: "Scott"
+
 ##### 15: Stylist returns stylist last name
 **Example:**  
 Input:  "Stephan", "Blair", 1  
 Output: "Blair"
+
 ##### 16: Stylist returns empty list
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
+
 ##### 17: Stylist clears database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{}
+
 ##### 18: Stylist saves to database
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
+
 ##### 19: Stylist adds new stylist
 **Example:**  
 Input: stylistOne: ("Stephan", "Blair", 1)  
 Output: List<Stylist>{stylistOne}
+
 ##### 20: Stylist database assigns id
 **Example:**  
 Input:
 clientOne: ("Scott", "Bergler", "5038905118", 1, 1),  
 clientTwo: ("Millicent", "Zimdars", "5034217832", 2, 1)  
 Output: 2
+
 ##### 21: Stylist returns a list of all stylists
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)  
 Output: List<Stylist>{stylistOne, stylistTwo}
+
 ##### 22: Stylist finds stylist
 **Example:**  
 Input:
 stylistOne: ("Stephan", "Blair", 1),  
 stylistTwo: ("Holly", "Kindred", 1)    
 Output: Client - Stephan Blair
+
 ##### 23: Stylist adds new client to stylist roster
 **Example:**  
 Input:  
@@ -242,30 +264,37 @@ Output: "Millicent", "Zimdars", "5034217832", 2, 1 -->
 **Example:**  
 Input:  indexView  
 Output: true
+
 ##### 25: Index Returns Correct Model Datatype
 **Example:**  
 Input:  modelDatatype  
 Output: true
+
 ##### 26: New Returns Correct View
 **Example:**  
 Input:  newView  
 Output: true
+
 ##### 27: Create Stylist Returns Correct View
 **Example:**  
 Input:  "Mindy", "StCyr"  
 Output: true
+
 ##### 28: Create Stylist Redirects To Correct View
 **Example:**  
 Input:  "Mindy", "StCyr"  
 Output: true
+
 ##### 29: Show Returns Correct View
 **Example:**  
 Input:  "Wes", "Cecil"  
 Output: true
+
 ##### 30: Create Client  Returns Correct Action Name
 **Example:**  
 Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"  
 Output: true
+
 ##### 31: Create Client Returns Correct Model Datatype
 **Example:**  
 Input:  "Wes", "Cecil", testStylist.GetId(), "Scott", "Bergler", "5038905118"  
@@ -276,8 +305,20 @@ Output: true
 **Example:**  
 Input:  New() view  
 Output: true
+
 ##### 33: Show Returns Correct View
 **Example:**  
 InputOne:  testStylist = new Stylist("Wes", "Cecil")  
 InputTwo:  testClient = new Client("Scott", "Bergler", "5038905118",   testStylist.GetId())
 Output: true
+
+### Additional Specs
+##### 34: Client returns client full name
+**Example:**  
+Input:  "Scott", "Bergler", "5038905118", 1, 1  
+Output: "Scott Bergler"
+
+##### 34: Stylist returns stylist full name
+**Example:**  
+Input:  "Mindy", "StCyr"  
+Output: "Mindy StCyr"

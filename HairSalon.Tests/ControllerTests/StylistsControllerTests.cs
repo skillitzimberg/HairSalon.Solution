@@ -106,16 +106,18 @@ namespace HairSalon.Tests
       Assert.IsInstanceOfType(createView, typeof(ViewResult));
     }
 
-    // [TestMethod]
-    // public void CreateClient_ReturnsCorrectView_True()
-    // {
-    //   StylistsController controller = new StylistsController();
-    //   RedirectToActionResult actionResult = controller.Create("Scott", "Bergler", "5038905118") as RedirectToActionResult;
-    //
-    //   string actionName = actionResult.ActionName;
-    //
-    //   Assert.AreEqual(actionName, "Index");
-    // }
+    [TestMethod]
+    public void CreateClient_ReturnsCorrectActionName_True()
+    {
+      StylistsController controller = new StylistsController();
+      Stylist testStylist = new Stylist("Mindy", "StCyr");
+      testStylist.Save();
+      RedirectToActionResult actionResult = controller.Create(testStylist.GetId(), "Scott", "Bergler", "5038905118") as RedirectToActionResult;
+
+      string actionName = actionResult.ActionName;
+
+      Assert.AreEqual(actionName, "Show");
+    }
 
 
   }
